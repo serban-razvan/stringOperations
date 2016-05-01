@@ -1,0 +1,41 @@
+Serban Razvan
+312CD
+====================
+Task 1
+
+Programul citeste fiecare linie, prima data bagand-o intr-un buffer, urmand ca sa o introducem in strarray, vector de stringuri allocat in heap.
+
+Pentru fiecare operatie avem cate o functie separata, op_x unde x e operatia ceruta.
+
+Functia one_of returneaza 1 daca charul primit este caracter delimitator sau final de propozitie.
+
+In op_1, folosind un buffer si strtok cautam cuvantul cerut in tot vectorul.
+
+In op_2, folosind one_of, cautam caracterele delimitatoare si vedem daca respectivul cuvant gasit intre ele se potriveste cu cel ce trebuie schimbat.
+
+In op_3, folosim functia one_of pentru a delimita cuvintele si functia rot_word care preia cuvantul si il pozitioneaza permutat in strarray, folosind impartirea modulo pentru a nu consuma cicluri inutile.
+
+====================
+Task 2
+
+Programul preia liniile si le introduce intr-un vector de cuvinte (cuvinte1 sau cuvinte2), adaugand si numarul aparitiilor lor (apar1 sau apar2), folosind functia adauga.
+
+Din vectorii apar si cuvinte facem 2 struct diferite care contin cuvantul si numarul aparitiilor lor, structura1 si structura2.
+
+Folosim qsort pentru a sorta vectorii in ordinea aparitiei, urmand ca folosind functia sim sa calculam gradul de similitudine.
+
+Functia dist calculeaza distanta intre 2 cuvinte folosind formula oferita.
+
+====================
+Bonus
+
+Se citesc ca mai sus randurile si expresiile cautate, parsam expresiile (scapam de stelutele adiacente) si dupa calculam rezultatul cu functia regex.
+
+Functia regex actioneaza recursiv, avand ca factor de decizie principal caracterul de pe pozitia 0 din expresie. Ea returneaza 1 fara alte chemari de functii recursive in cazul in care se apeleaza functia cu cuvantul si expresia ca stringuri nule.
+
+====================
+Toate programele returneaza 1 daca nu s-a alocat memoria cum trebuie cu malloc, calloc sau realloc.
+
+Pentru a scapa de newlineul de la finalul stringului luat cu fgets, folosim strtok, ce are efectul de a transforma newlineul in backslash 0. In cazul stringurilor vide, aceasta metoda nu functioneaza, aplicand backslash 0 manual.
+
+
